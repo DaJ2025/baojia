@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+        /* 表格水印样式 */
+       .mobile-table {
+            position: relative;
+        }
+
+       .mobile-table::before {
+            content: "大江电子";
+            white-space: pre;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            font-size: calc(0.9 * min(88px, 88vw));
+            color: rgba(0, 0, 0, 0.03);
+            z-index: 0;
+            width: 100%;
+            font-weight: 900;
+            text-align: center;
+            pointer-events: none;
+        }
+
+       .mobile-table::after {
+            content: "2025年2月2日";
+            position: absolute;
+            bottom: 50px;
+            right: 196px;
+            font-size: 15px;
+            color: rgba(0, 0, 0, 0.11);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* 以下为表格内容 */
+    .mobile-table {
+        width: 100%;
+        max-width: 390px;
+        margin: 20px auto;
+        border-collapse: collapse;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 16px;  /* 基础字号放大 */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        line-height: 1.2;  /* 增加行高 */
+    }
+    .mobile-table th {
+        padding: 16px 12px;  /* 加大内边距 */
+        text-align: center;  /* 表头居中 */
+        color: #ffffff;
+        font-weight: 700;  /* 加粗 */
+        font-size: 29px;  /* 表头字号放大 */
+        letter-spacing: 3px;  /* 增加字间距 */
+    }
+    .mobile-table td {
+        padding: 12px 14px;  /* 加大内边距 */
+        border-bottom: 1px solid #f0f0f0;
+        background: #ffffff;
+        font-size: 20px;  /* 内容字号放大 */
+    }
+    .mobile-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    /* 马卡龙色系配置 */
+    .circuit-board  { background-color: #87D37C; }  /* 薄荷绿 */
+    .appliances   { background-color: #89C4F4; }  /* 浅蓝 */
+    .power-parts    { background-color: #F6ABB6; }  /* 樱花粉 */
+    .electronics   { background-color: #D2B4DE; }  /* 浅紫 */
+    .others       { background-color: #F5D76E; }  /* 鹅黄 */
+</style>
+</head>
+<body>
+
+<!-- 电路板 -->
+<table class="mobile-table">
+    <thead>
+        <tr><th class="circuit-board" colspan="2">电路板</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>胶水板</td><td>2.2元/公斤</td></tr>
+        <tr><td>杂板</td><td>6元/公斤</td></tr>
+        <tr><td>电瓶车充电器板</td><td>6元/公斤</td></tr>
+        <tr><td>电源板</td><td>9元/公斤</td></tr>
+        <tr><td>青板</td><td>15.5元/公斤</td></tr>
+        <tr><td>电脑主板</td><td>21元/公斤起</td></tr>
+        <tr><td>通信板</td><td>50元/公斤起</td></tr>
+    </tbody>
+</table>
+
+<!-- 电子通讯设备 -->
+<table class="mobile-table">
+    <thead>
+        <tr><th class="appliances" colspan="2">电子通讯设备</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>光猫、路由器统货</td><td>13.5元/公斤</td></tr>
+        <tr><td>机顶盒统货</td><td>6.5元/公斤</td></tr>
+        <tr><td>摄像头、看家宝统货</td><td>8元/公斤</td></tr>
+        <tr><td>大交换机</td><td>9元/公斤</td></tr>
+        <tr><td>对讲机</td><td>11元/公斤</td></tr>
+
+    </tbody>
+</table>
+
+<!-- 强电配件 -->
+<table class="mobile-table">
+    <thead>
+        <tr><th class="power-parts" colspan="2">强电配件</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>白开关（空开）</td><td>9元/公斤</td></tr>
+        <tr><td>墙壁开关、插座</td><td>3.5元/公斤</td></tr>
+        <tr><td>插线板</td><td>3元/公斤</td></tr>
+        <tr><td>大开关</td><td>6元/公斤</td></tr>
+        <tr><td>老电表</td><td>9.5元/公斤</td></tr>
+        <tr><td>交流接触器</td><td>15元/公斤</td></tr>
+    </tbody>
+</table>
+
+<!-- 电脑主机 配件 -->
+<table class="mobile-table">
+    <thead>
+        <tr><th class="electronics" colspan="2">电脑主机 配件</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>电脑废旧硬盘</td><td>21元/公斤</td></tr>
+        <tr><td>电脑光驱</td><td>6.5元/公斤</td></tr>
+        <tr><td>电脑电源</td><td>8元/公斤</td></tr>
+        <tr><td>无桥主机</td><td>55元/台</td></tr>
+        <tr><td>单桥主机</td><td>65元/台</td></tr>
+        <tr><td>双桥主机</td><td>75元/台</td></tr>
+        <tr><td>型号主机 H81以上</td><td>70元/台 起</td></tr>
+    </tbody>
+</table>
+
+<!-- 电器杂货 -->
+<table class="mobile-table">
+    <thead>
+        <tr><th class="others" colspan="2">电器杂货</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>打印机</td><td>3元/公斤</td></tr>
+        <tr><td>DVD、功放</td><td>4元/公斤</td></tr>
+        <tr><td>鼠标键盘</td><td>3.2元/公斤</td></tr>
+        <tr><td>电话机</td><td>3元/公斤</td></tr>
+        <tr><td>光盘（碟片）</td><td>5元/公斤</td></tr>
+        <tr><td>剃须刀+吹风机</td><td>1.2元/公斤</td></tr>
+        <tr><td>电子杂货统货</td><td>2元/公斤</td></tr>
+        <tr><td>电机转子</td><td>11.5元/公斤</td></tr>
+        <tr><td>跑步机电机（蓝色）</td><td>55元/个 起</td></tr>
+
+    </tbody>
+</table>
+
+                                                       *电子杂货回收报价会跟随行情变动而调整，出货之前请咨询最新报价
+
+</body>
+</html>
